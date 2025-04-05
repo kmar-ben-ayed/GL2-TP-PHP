@@ -1,0 +1,51 @@
+body{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin: 0px;
+    height: 100%;
+}
+
+.etudiant{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 5px;
+    border-radius: 3px;
+    border: 0.5px solid rgb(210, 207, 207);
+}
+.nom , .orangediv, .greendiv , .reddiv , .moyenne{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin: 0px;
+    border: 0.5px solid rgb(210, 207, 207);
+    border-radius: 3px;
+}
+.orangediv{
+    background-color: rgb(251, 204, 119);
+
+}
+.reddiv{
+    background-color: rgb(255, 119, 119);
+}
+.greendiv{
+    background-color: rgb(119, 255, 119);
+}
+.moyenne{
+    background-color: rgb(119, 204, 255);
+}
+.nom{
+    background-color: rgb(228, 216, 216);
+
+}
