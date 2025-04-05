@@ -1,0 +1,19 @@
+.PokemonsContainer{
+    display: flex;
+    flex-direction: row;
+
+}
+.list-group{
+    flex:1;
+}
+.imgettexte{
+    display: flex;
+    flex-direction: row;
+}
+.texte , .points{
+    flex: 1;
+}
+.PointsContainer{
+    display: flex;
+    flex-direction: row;
+}
