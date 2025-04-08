@@ -19,6 +19,15 @@
         
         <?php include_once("navbarfixed.php");?>
         
+
+
+        <!-- As a heading -->
+        <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Liste Des Etudiants</span>
+        </div>
+        </nav>
+
         <table class="table">
             <thead>
                 <tr>

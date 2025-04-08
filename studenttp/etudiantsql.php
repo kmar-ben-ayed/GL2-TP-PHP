@@ -1,4 +1,5 @@
 <?php
+include_once("navbarfixed.php");
 require_once("connexionBD.php");
 $_bdd=ConnexionBD::getInstance();
 $_bdd->query("drop table if exists student;");
