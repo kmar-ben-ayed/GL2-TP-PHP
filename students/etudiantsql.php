@@ -1,6 +1,9 @@
 <?php
 require_once("connexionBD.php");
 $_bdd=ConnexionBD::getInstance();
+$_bdd->query("CREATE DATABASE student_manager");
+$_bdd->query("USE student_manager");
+
 $_bdd->query("drop table if exists student;");
 
 $req='CREATE TABLE student(
