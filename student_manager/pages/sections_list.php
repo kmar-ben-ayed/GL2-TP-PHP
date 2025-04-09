@@ -81,9 +81,9 @@ if ($role === 'admin' && isset($_GET['delete'])) {
                 <td><?= $s->description ?></td>
                 <?php if ($role === 'admin'): ?>
                     <td>
-                    <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm">
-                        <i class="fa-solid fa-list-ol"></i>
-                    </a>   
+                        <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm">
+                            <i class="fa-solid fa-list-ol"></i>
+                        </a>   
                     </td>
                 <?php endif; ?>
             </tr>

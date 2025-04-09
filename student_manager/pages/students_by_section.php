@@ -57,9 +57,10 @@ if (!$studentData) {
                             <td><?=$s['birthday'] ?></td>
                             <?php if ($_SESSION['role'] === 'admin'): ?>
                                 <td>
-                                    <a href="student_detail.php?id=<?= $s['id']; ?>" class="btn btn-info btn-sm">Details</a>
-                                    <a href="section_update.php?id=<?= $s['id']; ?>" class="btn btn-warning btn-sm">Update</a>
-                                    <a href="?delete=<?= $s['id']; ?>" class="btn btn-danger btn-sm">Delete</a></td>
+                                    <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="student_update.php?id=<?= $s->id ?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="?delete=<?= $s->id ?>" class="btn btn-danger btn-sm"><i class="fa-solid fa-eraser"></i></a>
+                                </td>
                             <?php endif; ?>
                         </tr>
                     <?php endforeach; ?>
