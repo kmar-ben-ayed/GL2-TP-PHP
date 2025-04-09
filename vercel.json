@@ -3,23 +3,23 @@
     "builds": [
       {
         "src": "etudiant/*.php",
-        "use": "@vercel/php"
+        "use": "@vercel-php"
       },
       {
         "src": "session/*.php",
-        "use": "@vercel/php"
+        "use": "@vercel-php"
       },
       {
         "src": "pokemontp/*.php",
-        "use": "@vercel/php"
+        "use": "@vercel-php"
       },
       {
         "src": "students/*.php",
-        "use": "@vercel/php"
+        "use": "@vercel-php"
       },
       {
         "src": "student_manager/*.php",
-        "use": "@vercel/php"
+        "use": "@vercel-php"
       }
     ],
     "routes": [
