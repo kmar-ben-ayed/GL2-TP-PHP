@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "vercel-php": "^0.7.3"
+    "vercel-php": "^0.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
