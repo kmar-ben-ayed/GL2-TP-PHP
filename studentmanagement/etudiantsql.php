@@ -1,9 +1,10 @@
 <?php
+include_once("navbarfixed.php");
 require_once("connexionBD.php");
 $_bdd=ConnexionBD::getInstance();
 $_bdd->query("drop table if exists student;");
 
-$req='CREATE TABLE student(
+$req='CREATE TABLE IF NOT EXISTS student(
     id INT NOT NULL PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
     date_naissance DATE NOT NULL);
