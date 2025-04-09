@@ -1,26 +1,5 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.4"
-  },
-  "name": "gl2-tp-php",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {
-    "vercel-php": "^0.6.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kmar-ben-ayed/GL2-TP-PHP.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kmar-ben-ayed/GL2-TP-PHP/issues"
-  },
-  "homepage": "https://github.com/kmar-ben-ayed/GL2-TP-PHP#readme",
-  "description": ""
+  }
 }
