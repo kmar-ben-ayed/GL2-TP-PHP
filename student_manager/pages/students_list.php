@@ -1,19 +1,14 @@
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-</head>
-
-
 <?php
 include_once "../includes/header.php";
 include_once "../includes/navbar.php";
 include_once "../classes/Student.php";
+include_once "../classes/Section.php";
 
 $student = new Student();
 $students = $student->findAll();
 $role = $_SESSION['role'];
 
-$perPage = 1;
+$perPage = 2;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $perPage;
 
@@ -74,13 +69,16 @@ if ($role === 'admin' && isset($_GET['delete'])) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($students as $s): ?>
+        <?php foreach ($students as $s): 
+            $new_section = new Section();
+            $section = $new_section->findById($s->section);
+        ?>
             <tr>
                 <td><?= $s -> id ?></td>
                 <td><img src="../includes/<?= $s->image ?>" class="rounded-circle" width="50" height="50"></td>
                 <td><?= $s-> name?></td>
                 <td><?= $s->birthday ?></td>
-                <td><?= $s->section ?></td>
+                <td><?=$section['designation'] ?></td>
                 <?php if ($role === 'admin'): ?>
                     <td>
                         <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
@@ -117,7 +115,6 @@ $nextPage = $page < $totalPages ? $page + 1 : $totalPages;
                 </li>
             <?php endfor; ?>
 
-            <!-- Lien Suivant -->
             <li class="page-item <?= ($page == $totalPages) ? 'disabled' : '' ?>">
                 <a class="page-link" href="?page=<?= $page + 1 ?>&search=<?= htmlspecialchars($searchName) ?>">Next</a>
             </li>

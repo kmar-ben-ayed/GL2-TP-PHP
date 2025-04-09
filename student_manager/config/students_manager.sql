@@ -32,8 +32,12 @@ INSERT INTO users (username, email, role, password) VALUES
 
 INSERT INTO sections (designation, description) VALUES
 ('GL', 'Génie Logiciel'),
-('RT', 'Réseau et Télécommunication');
+('RT', 'Réseau et Télécommunication'),
+('IIA', 'Informatique Industrille et Automatique'),
+('IMI', 'Instrumentation et Maintenance Industrielle');
 
 INSERT INTO students (name, birthday, image, section) VALUES
 ('Aymen', '1982-02-07', 'student_manager\includes\person.jpeg', 2), 
-('Skander', '2018-07-11', 'student_manager\includes\person.jpeg', 1);
+('Skander', '2018-07-11', 'student_manager\includes\person.jpeg', 3),
+('Sarah', '2005-03-14', 'student_manager\includes\person.jpeg', 1),
+('Kmar', '2004-07-11', 'student_manager\includes\person.jpeg', 1);

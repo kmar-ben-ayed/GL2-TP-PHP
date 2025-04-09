@@ -1,6 +1,8 @@
 <?php
 include_once "../includes/header.php";
+include_once "../includes/navbar.php";
 include_once "../classes/Student.php";
+include_once "../classes/Section.php";
 
 if ($_SESSION['role'] !== 'admin') {
     header('Location: students.php');
@@ -23,6 +25,9 @@ if (!$studentData) {
     include_once '../includes/footer.php';
     exit;
 }
+
+$new_section = new Section();
+$section = $new_section->findById($studentData['section']);
 ?>
 
 <div class="row">
@@ -48,7 +53,7 @@ if (!$studentData) {
                     </tr>
                     <tr>
                         <th>Section</th>
-                        <td><?php echo htmlspecialchars($studentData['section']); ?></td>
+                        <td><?php echo htmlspecialchars($section["designation"]); ?></td>
                     </tr>
                     <?php if (!empty($studentData['image'])): ?>
                         <tr>

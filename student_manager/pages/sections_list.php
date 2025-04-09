@@ -1,8 +1,3 @@
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
-</head>
-
 <?php
 include_once '../includes/header.php';
 include_once '../includes/navbar.php';
@@ -14,7 +9,7 @@ $student = new Student();
 $sections = $section->findAll();
 $role = $_SESSION['role'];
 
-$perPage = 1;
+$perPage = 2;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $perPage;
 
@@ -41,7 +36,7 @@ if ($role === 'admin' && isset($_GET['delete'])) {
     <form method="GET" class="mb-3">
         <div class="input-group">
             <input type="text" name="search" class="form-control" 
-                placeholder="Veuillez renseigner votre section" value="<?= htmlspecialchars($searchName) ?>">
+                placeholder="Veuillez renseigner votre section" value="<?= $searchName ?>">
             <button type="submit" class="btn btn-primary"  style="background-color:red; border-color:red;">Filtrer</button>
             <?php if ($searchName): ?>
                 <a href="sections_list.php" class="btn btn-secondary">Supprimer</a>
@@ -81,7 +76,7 @@ if ($role === 'admin' && isset($_GET['delete'])) {
                 <td><?= $s->description ?></td>
                 <?php if ($role === 'admin'): ?>
                     <td>
-                        <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm">
+                        <a href="students_by_section.php?id=<?= $s->id ?>" class="btn btn-info btn-sm">
                             <i class="fa-solid fa-list-ol"></i>
                         </a>   
                     </td>

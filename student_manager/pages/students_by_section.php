@@ -1,5 +1,6 @@
 <?php
 include_once "../includes/header.php";
+include_once '../includes/navbar.php';
 include_once "../classes/Student.php";
 include_once "../classes/Section.php";
 
@@ -15,9 +16,16 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 
 $sectionId = $_GET['id'];
 
+if ($_SESSION['role'] === 'admin' && isset($_GET['delete'])) {
+    $student = new Student();
+    $student->delete($_GET['delete']);
+    header("Location: students_list.php"); 
+}
 
 $student = new Student();
 $section = new Section();
+
+
 
 $sectionData = $section->findById($sectionId);
 if (!$sectionData) {
@@ -29,7 +37,9 @@ if (!$sectionData) {
 $studentData = $student->getStudentsBySection($sectionId);
 
 if (!$studentData) {
-    echo "<div class='alert alert-danger'>No student in this section!</div>";
+    echo "<div class='alert alert-danger'>No student in this section!</div>";?>
+    <a href="sections_list.php" class="btn btn-secondary">Back To Sections List</a>
+    <?php
     include_once '../includes/footer.php';
     exit;
 }
@@ -57,9 +67,9 @@ if (!$studentData) {
                             <td><?=$s['birthday'] ?></td>
                             <?php if ($_SESSION['role'] === 'admin'): ?>
                                 <td>
-                                    <a href="student_detail.php?id=<?= $s->id ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                                    <a href="student_update.php?id=<?= $s->id ?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="?delete=<?= $s->id ?>" class="btn btn-danger btn-sm"><i class="fa-solid fa-eraser"></i></a>
+                                    <a href="student_detail.php?id=<?= $s['id'] ?>" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="student_update.php?id=<?= $s['id'] ?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="?id=<?= $sectionId ?>&delete=<?= $s['id'] ?>" class="btn btn-danger btn-sm"><i class="fa-solid fa-eraser"></i></a>
                                 </td>
                             <?php endif; ?>
                         </tr>
@@ -71,10 +81,4 @@ if (!$studentData) {
     </div>
 </div>
 
-<?php 
-if ($_SESSION['role'] === 'admin' && isset($_GET['delete'])) {
-    $student->delete($_GET['delete']);
-    header('Location: students_list.php');
-}
-
-include_once '../includes/footer.php'; ?>
+<?php include_once '../includes/footer.php'; ?>
