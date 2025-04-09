@@ -12,9 +12,9 @@ if (!$student) {
 ?>
 
 <div class="container">
-    <h2><?= $student["nom"]?></h2>
+    <h2><?= $student["name"]?></h2>
     <br>
-    <p><?= $student["date_de_naissance"]?></p>
+    <p><?= $student["date_naissance"]?></p>
     <p><?= $student["section"]?></p>
             
 </div>

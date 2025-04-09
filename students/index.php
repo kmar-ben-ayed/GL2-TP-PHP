@@ -20,8 +20,8 @@ $students = $repo->findAll();
                     foreach($students as $student): ?>
                             <tr>
                                 <th scope="row"> <?= $student->id?> </th>
-                                <td> <?= $student->nom?></td>
-                                <td> <?= $student->date_de_naissance?> </td>
+                                <td> <?= $student->name?></td>
+                                <td> <?= $student->date_naissance?> </td>
                                 <td>
                                     <a href="detailsStudents.php?id=<?= $student->id ?>">Détails</a>
                                 </td>

@@ -1,7 +1,7 @@
 <?php
-class ConnexionDB
-{
-    private static $_dbname = "students";
+class Database {
+
+    private static $_dbname = "students_manager";
     private static $_user = "root";
     private static $_pwd = "";
     private static $_host = "localhost";
@@ -20,10 +20,12 @@ class ConnexionDB
     public static function getInstance(): ?PDO
     {
         if (!self::$_bdd) {
-            new ConnexionDB();
+            new Database();
         }
         return (self::$_bdd);
     }
 
     
+
 }
+?>
