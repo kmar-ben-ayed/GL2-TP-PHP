@@ -3,7 +3,7 @@ class Database {
 
     private static $_dbname = "students_manager";
     private static $_user = "root";
-    private static $_pwd = "";
+    private static $_pwd = "kmayrakammou2004";
     private static $_host = "localhost";
 
     private static $_bdd = null;

@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS student_manager;
-CREATE DATABASE student_manager;
-USE student_manager;
+DROP DATABASE IF EXISTS students_manager;
+CREATE DATABASE students_manager;
+USE students_manager;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -26,14 +26,14 @@ CREATE TABLE students (
 );
 
 
-INSERT INTO users (username, password, role) VALUES
+INSERT INTO users (username, email, role, password) VALUES
 ('admin1', 'admin@example.com', 'admin', '1234'), 
 ('user1', 'user@example.com', 'user', '0000');
 
 INSERT INTO sections (designation, description) VALUES
 ('GL', 'Génie Logiciel'),
-('RT', 'Réseau et Télécommunication'),
+('RT', 'Réseau et Télécommunication');
 
-INSERT INTO students (name, birthday, section) VALUES
-('Aymen', '1982-02-07','aymen.jpg' 2), 
-('Skander', '2018-07-11', 1), 
+INSERT INTO students (name, birthday, image, section) VALUES
+('Aymen', '1982-02-07', 'student_manager\includes\person.jpeg', 2), 
+('Skander', '2018-07-11', 'student_manager\includes\person.jpeg', 1);

@@ -53,7 +53,7 @@ if (!$studentData) {
                     <?php if (!empty($studentData['image'])): ?>
                         <tr>
                             <th>Image</th>
-                            <td><img src="<?php echo htmlspecialchars($studentData['image']); ?>" alt="Student Image" class="img-fluid" style="max-width: 200px;"></td>
+                            <td><img src="../includes/<?php echo $studentData['image']; ?>" class="rounded-circle" width="50" height="50"></td>
                         </tr>
                     <?php endif; ?>
                 </table>

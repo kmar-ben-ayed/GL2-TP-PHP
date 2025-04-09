@@ -18,29 +18,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <?php include_once("navbarfixed.php");?>
-        
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">name</th>
-                    <th scope="col">birthday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    require_once("etudiantsql.php");
-                    foreach($students as $student){
-                        echo'
-                            <tr>
-                                <th scope="row">'. $student['id'].'</th>
-                                <td>'.$student['name'].'</td>
-                                <td>'.$student['date_naissance'].'</td>
-                            </tr>
-                        ';
-                    }
 
-                ?>
-            </tbody>
-        </table>
     </body>

@@ -9,7 +9,7 @@ class User extends Repository {
         $response = $this->db->prepare("SELECT * FROM users WHERE username = ?");
         $response->execute([$username]);
         $user = $response->fetch(PDO::FETCH_ASSOC);
-        if ($user) {
+        if ($user && $user['password'] === $password) {
             return $user;
         }
     }
