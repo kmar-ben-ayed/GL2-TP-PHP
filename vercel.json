@@ -1,35 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "etudiant/*.php",
-        "use": "vercel-php@0.6.0"
-      },
-      {
-        "src": "session/*.php",
-        "use": "vercel-php@0.6.0"
-      },
-      {
-        "src": "pokemontp/*.php",
-        "use": "vercel-php@0.6.0"
-      },
-      {
-        "src": "students/*.php",
-        "use": "vercel-php@0.6.0"
-      },
-      {
-        "src": "student_manager/*.php",
-        "use": "vercel-php@0.6.0"
-      }
-    ],
-    "routes": [
-      { "src": "/etudiant/(.*)", "dest": "/etudiant/index.php" },
-      { "src": "/session/(.*)", "dest": "/session/index.php" },
-      { "src": "/pokemontp/(.*)", "dest": "/pokemontp/index.php" },
-      { "src": "/students/(.*)", "dest": "/students/index.php" },
-      { "src": "/student_manager/(.*)", "dest": "/student_manager/index.php" }
-    ],
-    "functions": {
+  "version": 2,
+  "routes": [
+    { "src": "/etudiant/(.*)", "dest": "/etudiant/index.php" },
+    { "src": "/session/(.*)", "dest": "/session/index.php" },
+    { "src": "/pokemontp/(.*)", "dest": "/pokemontp/index.php" },
+    { "src": "/students/(.*)", "dest": "/students/index.php" },
+    { "src": "/student_manager/(.*)", "dest": "/student_manager/index.php" }
+  ],
+  "functions": {
     "etudiant/*.php": {
       "runtime": "vercel-php@0.6.0"
     },
@@ -46,4 +24,4 @@
       "runtime": "vercel-php@0.6.0"
     }
   }
-  }
+}
