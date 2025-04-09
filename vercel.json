@@ -28,5 +28,22 @@
       { "src": "/pokemontp/(.*)", "dest": "/pokemontp/index.php" },
       { "src": "/students/(.*)", "dest": "/students/index.php" },
       { "src": "/student_manager/(.*)", "dest": "/student_manager/index.php" }
-    ]
+    ],
+    "functions": {
+    "etudiant/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "session/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "pokemontp/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "students/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "student_manager/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  }
   }
